@@ -1,0 +1,31 @@
+eventmodule.display_data:
+  path: '/admin/events/index'
+  defaults:
+    _controller: '\Drupal\eventmanagment\Controller\DisplayTableController::index'
+    _title: 'All Data'
+  requirements:
+    _permission: 'access content'
+
+eventmodule.show_data:
+  path: '/admin/eventmanagment/{id}/show'
+  defaults:
+    _controller: '\Drupal\eventmanagment\Controller\ShowController::show'
+    _title: 'Show Data'
+  requirements:
+    _permission: 'access content'
+
+eventmodule.delete_form:
+  path: '/admin/eventmanagment/{id}/delete'
+  defaults:
+    _form: '\Drupal\eventmanagment\Form\DeleteForm'
+    _title: 'DeleteForm'
+  requirements:
+    _access: 'TRUE'
+
+eventmodule.add_form:
+  path: '/admin/eventmanagment/add'
+  defaults:
+    _title: 'Add/Edit Data'
+    _form: '\Drupal\eventmanagment\Form\ModuleForm'
+  requirements:
+    _permission: 'access content'

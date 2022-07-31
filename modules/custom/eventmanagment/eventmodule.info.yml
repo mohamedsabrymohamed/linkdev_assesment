@@ -1,0 +1,6 @@
+name: 'Event Module'
+description: 'Custom Module'
+package: Custom
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9

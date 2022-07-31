@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * create table eventsTable
+ */
+function gTable_schema() {
+  $schema['events'] = array(
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'title' => array(
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'description' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'start_date' => array(
+        'type' => 'TIMESTAMP',
+        'not null' => TRUE,
+        'default' => 'CURRENT_TIMESTAMP',
+      ),
+      'end_date' => array(
+        'type' => 'TIMESTAMP',
+        'not null' => TRUE,
+        'default' => 'CURRENT_TIMESTAMP',
+      ),
+      'category' => array(
+        'type' => 'ENUM('Education','Economics','Business')',
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    'primary key' => array(
+      'id',
+    ),
+  );
+
+  return $schema;
+
+}
